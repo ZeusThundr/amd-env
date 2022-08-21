@@ -1,0 +1,27 @@
+set -x AMD_VULKAN_ICD "RADV"
+#set -x DISABLE_LAYER_AMD_SWITCHABLE_GRAPHICS_1 "1"
+#set -x VK_ICD_FILENAMES "/usr/share/vulkan/icd.d/amd_icd64.json"                         # AMDVLK
+#set -x VK_ICD_FILENAMES "/usr/share/vulkan/icd.d/amd_pro_icd64.json"                     # AMDVLK-Pro
+#set -x VK_ICD_FILENAMES "/usr/share/vulkan/icd.d/radeon_icd.x86_64.json"                 # AMD RADV
+set -x VK_ICD_FILENAMES "/usr/share/vulkan/icd.d/radeon_icd.i686.json:/usr/share/vulkan/icd.d/radeon_icd.x86_64.json"
+#set -x AMDVLK_ENABLE_DEVELOPING_EXT "all"                                                # AMDVLK Experimental Features
+#set -x RADV_TEX_ANISO "16"                                                               # AMDGPU 16x anisotropic filtering 
+set -x RADV_TEX_ANISO "0"                                                                 # AMDGPU 0x anisotropic filtering 
+#set -x AMD_TEX_ANISO "16"                                                                # AMDGPU 16x anisotropic filtering
+#set -x R600_TEX_ANISO "16"                                                               # AMDGPU 16x anisotropic filtering
+#set -x AMD_DEBUG "sisched,nir,forcedma,unsafemath,llvm,gisel,dpbb,dfsm,noatocdithering"  # AMD\R600 Debug options
+set -x MESA_NO_DITHER "1"                                                                 # Disables Dithering
+set -x glShadeMode "off"                                                                  # Disables smooth shading
+set -x MESA_GLX_DEPTH_BITS "0"                                                            # Disables Depth Buffering
+#set -x MESA_BACK_BUFFER "pixmap"                                                         # Double Buffer
+#set -x MESA_GLTHREAD "on"                                                                # PERFORMANCE GAINS
+set -x GL_LIGHT_MODEL_LOCAL_VIEWER "false"                                                # Faster Lighting
+set -x EQAA "0,0,0"  #No MSAA
+#set -x EQAA "2,2,2"  #2x MSAA
+#set -x EQAA "4,2,2"  #2f4x EQAA
+#set -x EQAA "4,4,4"  #4x MSAA 
+#set -x EQAA "8,2,2"  #2f8x EQAA
+#set -x EQAA "8,4,4"  #4f8x EQAA
+#set -x EQAA "16,4,4" #4f16x EQAA
+#set -x EQAA "8,8,8"  #8x MSAA
+#set -x EQAA=16,8,8   #8f16x EQAA
